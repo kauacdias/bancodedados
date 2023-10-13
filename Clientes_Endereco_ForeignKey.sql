@@ -72,6 +72,7 @@ values ('5', '5');
 insert into Perfis(ClientesFk, EnderecoFk)
 values ('1', '3');
 
-SELECT Clientes.Nome, Endereco.Logradouro FROM Clientes
-JOIN Perfis ON Clientes.IdClientes = Perfis.ClientesFk
-JOIN Endereco ON Perfis.EnderecoFK = Endereco.IdEndereco;
+SELECT Clientes.Nome as "Nome do Cliente", Endereco.Logradouro as "Endereço do Cliente" FROM Clientes
+INNER JOIN Perfis ON Clientes.IdClientes = Perfis.ClientesFk
+INNER JOIN Endereco ON Perfis.EnderecoFK = Endereco.IdEndereco
+ORDER BY Clientes.Nome;
